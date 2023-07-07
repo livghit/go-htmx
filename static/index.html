@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="m-0 p-0">
   <head>
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/output.css" rel="stylesheet" />
     <script
       src="https://unpkg.com/htmx.org@1.9.2"
       integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <button
+        class="btn btn-primary m-5"
+        hx-get="localhost:1323/deez"
+        hx-on="click: alert('Clicki clicki')"
+      >
+        Click me DADY
+      </button>
+    </main>
+  </body>
 </html>
