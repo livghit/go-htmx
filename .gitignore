@@ -1,5 +1,5 @@
-.node_modules
-.package-lock.json
-.go.sum
+node_modules/
+package-lock.json
+go.sum
 .env
 .DS_Store
