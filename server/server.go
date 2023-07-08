@@ -7,12 +7,13 @@ import (
 
 func Run() {
 	t := &Template{
-		templates: template.Must(template.ParseGlob("./client/*.html")),
+		templates: template.Must(template.ParseGlob("./client/**/*.html")),
 	}
 
 	e := echo.New()
 	e.Renderer = t
-  e.Static("/css" , "./client/static/css")
+	e.Static("/css", "./client/static/css")
+	e.GET("/test", NotFound)
 	e.GET("/", Homepage)
 	e.Logger.Fatal(e.Start(":1323"))
 }
