@@ -1,1 +1,1 @@
-# Testing Out HTMX and GO fusion
+# Project structure GO-ECHO backend , HTMX-TAILWINDCSS frontend
