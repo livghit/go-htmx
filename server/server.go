@@ -2,6 +2,7 @@ package server
 
 import (
 	"github.com/labstack/echo/v4"
+  "github.com/livghit/go-htmx/server/templates"
 	"html/template"
 )
 
@@ -13,7 +14,7 @@ func Run() {
 	e := echo.New()
 	e.Renderer = t
 	e.Static("/css", "./client/static/css")
-	e.GET("/test", NotFound)
-	e.GET("/", Homepage)
+	e.GET("/404", templates.NotFound)
+	e.GET("/", templates.Homepage)
 	e.Logger.Fatal(e.Start(":1323"))
 }
