@@ -1,16 +1,34 @@
 {{define "Homepage"}}
 <!doctype html>
 <html lang="en">
-  {{template head}}
+  <head>
+    <title>{{.}}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.2"
+      integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
   <body>
     <button
       hx-get="/api/Crazy_Joe"
       hx-target="#retrived_name"
+      hx-indicator="#spinner"
+      hx-trigger="load delay:1s"
       class="btn m-5 btn-primary"
     >
       Retrive names
     </button>
 
+    <span
+      class="htmx-indicator loading loading-spinner loading-xs flex"
+      id="spinner"
+      >Loading</span
+    >
     <span id="retrived_name"></span>
   </body>
 </html>
