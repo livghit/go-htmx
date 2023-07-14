@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{{.}}</title>
+    <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script
@@ -18,18 +18,12 @@
       hx-get="/api/Crazy_Joe"
       hx-target="#retrived_name"
       hx-indicator="#spinner"
-      hx-trigger="load delay:1s"
       class="btn m-5 btn-primary"
     >
       Retrive names
     </button>
-
-    <span
-      class="htmx-indicator loading loading-spinner loading-xs flex"
-      id="spinner"
-      >Loading</span
-    >
-    <span id="retrived_name"></span>
+    <span id="spinner" class="htmx-indicator">Loading the name</span>
+    <span id="retrived_name"> </span>
   </body>
 </html>
 {{end}}
