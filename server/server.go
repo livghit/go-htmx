@@ -5,15 +5,8 @@ import (
 	"github.com/livghit/go-htmx/server/routes"
 )
 
-type Server struct {
-	name    string
-	port    string
-	engine  *fiber.App
-}
-
 func Run() {
 	app := fiber.New()
-
 	router := routes.Router{}
 	//if there is any middleware use:
 	// router.LoadMiddleware(app)
