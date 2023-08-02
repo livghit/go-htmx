@@ -1,5 +1,4 @@
 run:
-	go run main.go
+	go run cmd/linkhub/main.go
 
-tailwind:
-	cd client && npx tailwindcss -i ./static/css/input.css -o ./static/css/style.css --watch
+	
