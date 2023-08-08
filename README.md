@@ -11,7 +11,7 @@
 
 </div>
 
-# This should be 'a way' not 'the way' of building quick full stack apps with go and as less js as posible XD
+# This should be 'a way' not 'the way' of building quick full stack apps with go and htmx / alpinejs
 
 ## You can use the client or just use this as a Structure for a api .
 
