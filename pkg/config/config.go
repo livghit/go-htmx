@@ -9,7 +9,29 @@ import (
 	"github.com/gofiber/fiber/v2/utils"
 	"github.com/livghit/linkhub/pkg/templating"
 	"github.com/livghit/linkhub/web/handlers"
+	"github.com/spf13/viper"
 )
+
+type Env struct {
+	PORT    string `mapstructure:"PORT"`
+	APPNAME string `mapstructure:"APP_NAME"`
+}
+
+func LoadEnv(path string) (env Env, err error) {
+	viper.AddConfigPath(path)
+	viper.SetConfigName("app")
+	viper.SetConfigType("env")
+
+	viper.AutomaticEnv()
+
+	err = viper.ReadInConfig()
+	if err != nil {
+		return
+	}
+
+	err = viper.Unmarshal(&env)
+	return
+}
 
 // Function to pass the Templating Engine to the fiber app
 func ViewConfigs() fiber.Config {

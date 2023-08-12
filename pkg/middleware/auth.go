@@ -1,20 +1,28 @@
 package middleware
 
-// using decorator pattern to redefine the AUTH logic inside the app 
+import (
+	"github.com/gofiber/fiber/v2"
+	"net/http"
+)
 
-func auth(fn fiber.Handler) fiber.Handler{ 
+type User struct {
+	name string
+}
 
-  return func(c *fiber.Ctx) error{
-    // inside here you chek for the authorisation rules that you want  ex
-  user = getUserFromLdap();
-    if user == nil{
-      // here we could also render a Unauth View using the engine !
-      // Example: 
-      // c.Render("errors/401" , fiber.Map{Title: "Unautherized"}, "layout/base")
-      return c.SendStatus(http.StatusUnautorized)
-    }
+// using decorator pattern to redefine the AUTH logic inside the app
+func Auth(fn fiber.Handler) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		// inside here you chek for the authorisation rules that you want  ex
+		user := User{
+			name: "dan",
+		}
+		if user.name != "dan" {
+			// here we could also render a Unauth View using the engine !
+			// Example:
+			// c.Render("errors/401" , fiber.Map{Title: "Unautherized"}, "layout/base")
+			return c.SendStatus(http.StatusUnauthorized)
+		}
 
-    return fn(c)
-  }
-
+		return fn(c)
+	}
 }

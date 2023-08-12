@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/basicauth"
 	"github.com/gofiber/fiber/v2/middleware/csrf"
 	"github.com/livghit/linkhub/pkg/config"
 )

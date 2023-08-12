@@ -6,6 +6,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/livghit/linkhub/pkg/config"
 	"github.com/livghit/linkhub/pkg/middleware"
+
+	// "github.com/livghit/linkhub/pkg/middleware"
 	"github.com/livghit/linkhub/web/handlers"
 )
 
@@ -18,11 +20,14 @@ QUESTIONS :
 func main() {
 
 	app := fiber.New(config.ViewConfigs())
-	// register the auth middleware - this is a very basic and small auth provider
-	app.Use(middleware.Auth())
+	env, err := config.LoadEnv(".")
+	if err != nil {
+		log.Printf("%v", err)
+	}
+	log.Printf("%v", env.APPNAME)
 
 	// From here register all routes
-	app.Get("/", handlers.HomepageHandler)
+	app.Get("/", middleware.Auth(handlers.HomepageHandler))
 
 	app.Get("/test", func(c *fiber.Ctx) error {
 		return c.Render("pages/index", fiber.Map{
@@ -32,6 +37,6 @@ func main() {
 
 	app.Get("/users", handlers.UserHandler)
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(env.PORT))
 
 }
