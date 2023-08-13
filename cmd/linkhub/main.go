@@ -7,15 +7,9 @@ import (
 	"github.com/livghit/linkhub/pkg/config"
 	"github.com/livghit/linkhub/pkg/middleware"
 
-	// "github.com/livghit/linkhub/pkg/middleware"
 	"github.com/livghit/linkhub/web/handlers"
 )
 
-/*
-QUESTIONS :
-- Where will the middleware be placed
-- How to handle user login with azur ad
-*/
 
 func main() {
 
@@ -24,19 +18,11 @@ func main() {
 	if err != nil {
 		log.Printf("%v", err)
 	}
-	log.Printf("%v", env.APPNAME)
+	log.Printf("%v lock and loaded !", env.APPNAME)
 
-	// From here register all routes
+	//Here you can register own routes  
 	app.Get("/", middleware.Auth(handlers.HomepageHandler))
-
-	app.Get("/test", func(c *fiber.Ctx) error {
-		return c.Render("pages/index", fiber.Map{
-			"Title": "App",
-		}, "layouts/base")
-	})
-
 	app.Get("/users", handlers.UserHandler)
 
 	log.Fatal(app.Listen(env.PORT))
-
 }

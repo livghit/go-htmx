@@ -14,3 +14,8 @@ func ConnectDatabase(databasePath string) *gorm.DB {
 
 	return db
 }
+
+// function that takes an Models map and migrates the db schema
+func MigrateFromMap([]gorm.Model) error {
+	return nil
+}
