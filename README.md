@@ -11,7 +11,7 @@
 
 </div>
 
-# This should be 'a way' not 'the way' of building quick full stack apps with go and htmx / alpinejs
+# This should be 'a way' not 'the way' of building quick full stack apps with go and htmx / alpinejs (atm still work in progress)
 
 ## You can use the client or just use this as a Structure for a api .
 
