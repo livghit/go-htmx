@@ -1,4 +1,4 @@
 run:
-	go run cmd/linkhub/main.go
+	go run cmd/linkhub/*.go
 
 	
