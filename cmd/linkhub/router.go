@@ -2,10 +2,14 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/livghit/linkhub/web/handlers"
 )
 
 func SetupWebRoutes(app *fiber.App) {
 	// Setting up the routes for the web
+	// this means inside here you map the url with an handler ex
+	app.Get("/", handlers.HomepageHandler)
+
 }
 
 func SetupApiRoutes(app *fiber.App) {
