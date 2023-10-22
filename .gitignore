@@ -6,3 +6,4 @@ app.env
 client/node_modules
 client/package-lock
 Problems.md
+bin

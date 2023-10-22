@@ -1,4 +1,10 @@
+dev:
+	@go run cmd/linkhub/*.go
+
+build:
+	@go build -o bin/startApp cmd/main.go 
+
 run:
-	go run cmd/linkhub/*.go
+	@./bin/startApp.exe
 
 	
