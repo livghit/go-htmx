@@ -4,7 +4,7 @@ import (
 	"github.com/gofiber/template/django/v3"
 	"github.com/gofiber/template/html/v2"
 	"github.com/gofiber/template/mustache/v2"
-	"github.com/livghit/linkhub/pkg/utils"
+	"github.com/livghit/go-htmx/pkg/utils"
 )
 
 // The second parameter of the  new function is used to tell the engine wich ending the files have

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/livghit/linkhub/web/handlers"
+	"github.com/livghit/go-htmx/web/handlers"
 )
 
 func SetupWebRoutes(app *fiber.App) {

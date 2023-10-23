@@ -7,8 +7,8 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/basicauth"
 	"github.com/gofiber/fiber/v2/middleware/csrf"
 	"github.com/gofiber/fiber/v2/utils"
-	"github.com/livghit/linkhub/pkg/templating"
-	"github.com/livghit/linkhub/web/handlers"
+	"github.com/livghit/go-htmx/pkg/templating"
+	"github.com/livghit/go-htmx/web/handlers"
 	"github.com/spf13/viper"
 )
 

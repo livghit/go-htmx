@@ -3,7 +3,7 @@ package middleware
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/csrf"
-	"github.com/livghit/linkhub/pkg/config"
+	"github.com/livghit/go-htmx/pkg/config"
 )
 
 // In this dir we setup the middleware provided by fiber itself the config for them will be found in config.go

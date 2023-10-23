@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/livghit/linkhub/pkg/config"
+	"github.com/livghit/go-htmx/pkg/config"
 )
 
 func main() {
