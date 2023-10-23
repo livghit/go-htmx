@@ -13,4 +13,6 @@
 
 # This should be 'a way' not 'the way' of building quick full stack apps with go and htmx / alpinejs (atm still work in progress)
 
+# Contribution <a href="Contributing.md">here something to read</a>
 
+        Just open an Pull Req or an Issue🐙
