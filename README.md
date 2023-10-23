@@ -6,8 +6,7 @@
 
 [![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
 [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Alpine.js](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0)](https://alpinejs.dev/)
-[![htmx](https://img.shields.io/badge/htmx-%23807C8C?style=for-the-badge&logo=htmx)](https://htmx.org/)
+[![Alpine.js & HTMX](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0)](https://alpinejs.dev/)
 
 
 </div>
