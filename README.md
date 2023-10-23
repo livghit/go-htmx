@@ -1,7 +1,7 @@
 <div align="center" >
 
 <kbd>
-<img src="https://cdn.dribbble.com/userupload/2624050/file/original-59266f4dea1c2aa43f2064cc0f3b165a.png?compress=1&resize=800x600&vertical=center"  alt="Logo" height="400" width="450"/>
+<img src="https://static.wixstatic.com/media/21d693_5b1558fc0b114cdab5fc467d808c6888~mv2.png/v1/fit/w_2500,h_1330,al_c/21d693_5b1558fc0b114cdab5fc467d808c6888~mv2.png"  alt="Logo" height="400" width="450"/>
 </kbd>
 
 [![GO](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
