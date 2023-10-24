@@ -1,3 +1,6 @@
+
+<div align="center"><b>Disclaimer!</b><p>I am still learning do not take my  code as a must nor as perfect! Also I use Fiber , but you do not really need to use is . Go has a very powerfull standart library that can be used to build simple apps . Here a video that shows how powerfull the go standart lib can be :) <a href="https://www.youtube.com/watch?v=Qi9A6-xoOkA">Awsome Video about go and HTMX</a></p></div>
+
 <div align="center" >
 
 <kbd>
