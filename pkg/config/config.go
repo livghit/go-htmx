@@ -15,6 +15,7 @@ import (
 type Env struct {
 	PORT    string `mapstructure:"PORT"`
 	APPNAME string `mapstructure:"APP_NAME"`
+	DBENGINE string `mapstructure:"DB_ENGINE"`
 }
 
 func LoadEnv(path string) (env Env, err error) {
