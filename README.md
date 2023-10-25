@@ -1,8 +1,12 @@
+
+<div align="center"><b>Disclaimer!</b><p>I am still learning do not take my  code as a must nor as perfect! Also I use Fiber , but you do not really need to use is . Go has a very powerfull standart library that can be used to build simple apps . Here a video that shows how powerfull the go standart lib can be :) <a href="https://www.youtube.com/watch?v=Qi9A6-xoOkA">Awsome Video about go and HTMX</a></p></div>
+
 <div align="center" >
 
 <kbd>
 <img src="https://static.wixstatic.com/media/21d693_5b1558fc0b114cdab5fc467d808c6888~mv2.png/v1/fit/w_2500,h_1330,al_c/21d693_5b1558fc0b114cdab5fc467d808c6888~mv2.png"  alt="Logo" height="400" width="450"/>
 </kbd>
+<div>Using</div>
 
 [![GO](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
 [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
