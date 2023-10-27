@@ -16,7 +16,7 @@ type Database struct {
 	Engine *sql.DB
 }
 
-var DB *Database
+var DB *sql.DB
 
 func InitDatabase() *Database {
 	return &Database{}
@@ -40,7 +40,7 @@ func (db *Database) Connect(envFile config.Env) {
 		log.Default().Print("Connection done ")
 		// mapping the connection to the engine
 		db.Engine = connection
-		DB = db
+		DB = db.Engine
 		break
 	case "mysql":
 		log.Fatal("MYSQL engine is not implemented yet")
@@ -57,7 +57,8 @@ func (db *Database) Connect(envFile config.Env) {
 func (db *Database) MakeMigration() {
 
 	log.Default().Println("Making migration...")
-	statement, err := db.Engine.Prepare(models.MigrateProductTable()) // Prepare SQL Statement
+	// using the global DB var to access the Prepare Method on the DB
+	statement, err := DB.Prepare(models.MigrateProductTable()) // Prepare SQL Statement
 	if err != nil {
 		log.Fatal(err.Error())
 	}
