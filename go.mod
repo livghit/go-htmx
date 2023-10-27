@@ -7,6 +7,7 @@ require (
 	github.com/gofiber/template/django/v3 v3.1.5
 	github.com/gofiber/template/html/v2 v2.0.5
 	github.com/gofiber/template/mustache/v2 v2.0.6
+	github.com/mattn/go-sqlite3 v1.14.17
 	github.com/spf13/viper v1.16.0
 )
 

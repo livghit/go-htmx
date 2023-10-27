@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/livghit/go-htmx/pkg/data/models"
 	"github.com/livghit/go-htmx/web/handlers"
 )
 
@@ -24,5 +25,7 @@ func SetupApiRoutes(app *fiber.App) {
 	api.Get("/users", func(c *fiber.Ctx) error {
 		return c.SendString("This matches the path /api/v1/users and should return the users ")
 	})
+
+	api.Get("/testing", models.GetProducts)
 
 }
