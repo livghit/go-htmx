@@ -21,8 +21,8 @@ func SetupApiRoutes(app *fiber.App) {
 
 	// on the ROUTE GROUP you now can register the routes
 	// you can create api handler in the handlers dir and add handler.HandlerName to the get instead of the func
-	api.Get("/path", func(c *fiber.Ctx) error {
-		return c.SendString("This matches the path /api/v1/path")
+	api.Get("/users", func(c *fiber.Ctx) error {
+		return c.SendString("This matches the path /api/v1/users and should return the users ")
 	})
 
 }
