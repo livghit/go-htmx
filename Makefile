@@ -7,5 +7,3 @@ build:
 
 run:
 	@./bin/startApp.exe
-
-	

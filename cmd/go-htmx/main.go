@@ -3,9 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/gofiber/fiber/v2"
 	"github.com/livghit/go-htmx/pkg/config"
-	"github.com/livghit/go-htmx/pkg/data"
+	"github.com/livghit/go-htmx/pkg/server"
 )
 
 func main() {
@@ -14,24 +13,17 @@ func main() {
 	if err != nil {
 		log.Printf("%v", err)
 	}
-	log.Printf("%v lock and loaded !", env.APPNAME)
+	log.Printf("%v lock and loaded !", env.APP_NAME)
 
 	if err := run(env); err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func run(env config.Env) error {
-	app := fiber.New(config.ViewConfigs())
-	//initiating the database and connecting to the engine set up inside the env file
-	database := data.InitDatabase()
-	database.Connect(env)
-  database.MakeMigration()
-  
-	//Here you can register own routes
+	app := server.New()
+	// Here you can register own routes
 	SetupApiRoutes(app)
 
-	return app.Listen(env.PORT)
-
+	return app.Listen(env.APP_PORT)
 }
