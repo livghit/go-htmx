@@ -10,6 +10,7 @@ type Server struct {
 	fiber.Storage
 }
 
+// In order to start a new server you need to pass in a Storage
 func New(storage fiber.Storage) *Server {
 	return &Server{
 		App:     fiber.New(config.ViewConfigs()),

@@ -9,3 +9,4 @@ Problems.md
 bin
 tmp/
 *.db
+*.sqlite3
