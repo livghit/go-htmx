@@ -5,6 +5,7 @@ import (
 
 	"github.com/livghit/go-htmx/pkg/config"
 	"github.com/livghit/go-htmx/pkg/server"
+	"github.com/livghit/go-htmx/pkg/storage"
 )
 
 func main() {
@@ -21,9 +22,12 @@ func main() {
 }
 
 func run(env config.Env) error {
-	app := server.New()
-	// Here you can register own routes
-	SetupApiRoutes(app)
+	s := storage.New(env)
+	app := server.New(s)
+
+	// Here you can register own routes example below:
+	SetupApiRoutes(app.App)
+	SetupWebRoutes(app.App)
 
 	return app.Listen(env.APP_PORT)
 }

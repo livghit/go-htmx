@@ -7,5 +7,5 @@ import "github.com/gofiber/fiber/v2"
 */
 
 func HomepageHandler(c *fiber.Ctx) error {
-	return c.SendString("hello homepage")
+	return c.Render("pages/index", fiber.Map{}, "layouts/base")
 }
