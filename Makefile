@@ -1,9 +1,6 @@
-# You can use this or air 
+#use this or air to tun and build
 dev:
 	@go run cmd/go-htmx/*.go
 
 build:
-	@go build -o bin/main cmd/go-htmx/*.go 
-
-run:
-	@./bin/startApp.exe
+	go build -o bin/main cmd/go-htmx/*.go  && bin/main
