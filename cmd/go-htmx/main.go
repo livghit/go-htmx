@@ -21,13 +21,18 @@ func main() {
 	}
 }
 
+// Runner function witch starts the server and loads all the needed things
 func run(env config.Env) error {
 	s := storage.New(env)
 	app := server.New(s)
 
-	// Here you can register own routes example below:
-	SetupApiRoutes(app.App)
-	SetupWebRoutes(app.App)
+	/*  Here you can register own routes example below:
+	* 	we pass the storage here so we can use it
+	* 	inside the handlers to modify and store
+	* 	the data
+	 */
+	SetupApiRoutes(app.App, &s)
+	SetupWebRoutes(app.App, &s)
 
 	return app.Listen(env.APP_PORT)
 }

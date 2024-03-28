@@ -2,6 +2,7 @@ package api
 
 func GetProducts() {
 	// should return all the products
+	HandlerStorage
 }
 
 func GetProductByID(id int) {

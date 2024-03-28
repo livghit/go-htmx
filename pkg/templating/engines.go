@@ -8,6 +8,7 @@ import (
 )
 
 // The second parameter of the  new function is used to tell the engine wich ending the files have
+// in this case we have html as default engine
 const templatesEnding = ".html"
 
 func MustacheEngine() *mustache.Engine {
