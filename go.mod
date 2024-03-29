@@ -1,6 +1,6 @@
 module github.com/livghit/go-htmx
 
-go 1.20
+go 1.22.1
 
 require (
 	github.com/gofiber/fiber/v2 v2.48.0
