@@ -3,6 +3,7 @@ module github.com/livghit/go-htmx
 go 1.22.1
 
 require (
+	github.com/a-h/templ v0.2.648
 	github.com/gofiber/fiber/v2 v2.48.0
 	github.com/gofiber/storage/mssql/v2 v2.0.0-20240130044545-a4ca8cde2603
 	github.com/gofiber/storage/postgres/v3 v3.0.0-20240130044545-a4ca8cde2603
@@ -17,7 +18,7 @@ require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/cbroglie/mustache v1.4.0 // indirect
 	github.com/flosch/pongo2/v6 v6.0.0 // indirect
-	github.com/fsnotify/fsnotify v1.6.0 // indirect
+	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gofiber/template v1.8.2 // indirect
 	github.com/gofiber/utils v1.1.0 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
@@ -31,7 +32,7 @@ require (
 	github.com/klauspost/compress v1.16.5 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.19 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/mattn/go-sqlite3 v1.14.18 // indirect
 	github.com/microsoft/go-mssqldb v1.6.0 // indirect
