@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/adaptor"
+	"github.com/livghit/go-htmx/web/views/pages"
 )
 
 /*
@@ -10,5 +10,5 @@ import (
 */
 
 func HomepageHandler(c *fiber.Ctx) error {
-	return adaptor.HTTPHandler()
+	return Render(c, pages.Index())
 }
