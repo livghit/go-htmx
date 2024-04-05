@@ -1,6 +1,8 @@
 package storage
 
 import (
+	"log/slog"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/storage/mssql/v2"
 	"github.com/gofiber/storage/postgres/v3"
@@ -22,6 +24,8 @@ func New(env config.Env) fiber.Storage {
 		storage = postgres.New(config.StoragePostgressConfig())
 		return storage
 	default:
+		slog.Error("No supported Engine selected for Storage")
+		// transform panic to error
 		panic("No supported Engine selected for Storage")
 	}
 }
