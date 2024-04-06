@@ -4,7 +4,6 @@ import (
 	"log"
 
 	"github.com/livghit/go-htmx/pkg/config"
-	"github.com/livghit/go-htmx/pkg/jwt"
 	"github.com/livghit/go-htmx/pkg/server"
 	"github.com/livghit/go-htmx/pkg/storage"
 )
@@ -16,9 +15,6 @@ func main() {
 		log.Printf("%v", err)
 	}
 	log.Printf("%v lock and loaded !", env.APP_NAME)
-
-	secret, _ := jwt.GenerateJWT(2)
-	log.Println(secret)
 
 	if err := run(env); err != nil {
 		log.Fatal(err)

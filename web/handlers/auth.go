@@ -1,10 +1,15 @@
 package handlers
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/livghit/go-htmx/web/views/pages"
+)
 
 // Used as a Handler on the Auth middleware returns the 401 Page
-func NotAuthorized(c *fiber.Ctx) error {
-	return c.Render("errors/401", fiber.Map{
-		"Title": "401 - Unauthorized",
-	}, "layouts/errors")
+func RenderRegisterPage(c *fiber.Ctx) error {
+	return Render(c, pages.RegisterPage())
+}
+
+func RenderLoginPage(c *fiber.Ctx) error {
+	return Render(c, pages.LoginPage())
 }

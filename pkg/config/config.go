@@ -57,7 +57,7 @@ func AuthConfig() basicauth.Config {
 			"john":  "doe",
 			"admin": "123456",
 		},
-		Unauthorized: handlers.NotAuthorized,
+		Unauthorized: handlers.RenderLoginPage,
 	}
 
 	return authconfig

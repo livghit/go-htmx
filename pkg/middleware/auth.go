@@ -20,7 +20,7 @@ func Auth(fn fiber.Handler) fiber.Handler {
 		// here implement JWT and check for the valid token existence
 		// if there can
 		user := User{
-			name: "dan",
+			name: "dann",
 		}
 		if user.name != "dan" {
 			// here we could also render a Unauth View using the engine !

@@ -12,7 +12,11 @@ func SetupWebRoutes(app *fiber.App, s *fiber.Storage) {
 	// Setting up the routes for the web
 	// this means inside here you map the url with an handler ex
 	HandlersStorage = s
+
 	app.Get("/", middleware.Auth(handlers.HomepageHandler))
+	app.Get("/register", handlers.RenderRegisterPage)
+	app.Get("/login", handlers.RenderLoginPage)
+	app.Post("/login", handlers.Login)
 }
 
 func SetupApiRoutes(app *fiber.App, storage *fiber.Storage) {
