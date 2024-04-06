@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/livghit/go-htmx/pkg/middleware"
 	"github.com/livghit/go-htmx/web/handlers"
 )
 
@@ -11,7 +12,7 @@ func SetupWebRoutes(app *fiber.App, s *fiber.Storage) {
 	// Setting up the routes for the web
 	// this means inside here you map the url with an handler ex
 	HandlersStorage = s
-	app.Get("/", handlers.HomepageHandler)
+	app.Get("/", middleware.Auth(handlers.HomepageHandler))
 }
 
 func SetupApiRoutes(app *fiber.App, storage *fiber.Storage) {

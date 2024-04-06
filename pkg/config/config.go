@@ -16,10 +16,11 @@ import (
 )
 
 type Env struct {
-	APP_PORT  string `mapstructure:"APP_PORT"`
-	APP_NAME  string `mapstructure:"APP_NAME"`
-	DB_ENGINE string `mapstructure:"DB_ENGINE"`
-	DB_NAME   string `mapstructure:"DB_NAME"`
+	APP_PORT   string `mapstructure:"APP_PORT"`
+	APP_NAME   string `mapstructure:"APP_NAME"`
+	DB_ENGINE  string `mapstructure:"DB_ENGINE"`
+	DB_NAME    string `mapstructure:"DB_NAME"`
+	JWT_SECRET string `mapstructure:"JWT_SECRET"`
 }
 
 func LoadEnv(path string) (env Env, err error) {
