@@ -8,18 +8,16 @@ import (
 
 var HandlersStorage *fiber.Storage
 
-func SetupWebRoutes(app *fiber.App, s *fiber.Storage) {
+func WebRoutes(app *fiber.App) {
 	// Setting up the routes for the web
 	// this means inside here you map the url with an handler ex
-	HandlersStorage = s
-
 	app.Get("/", middleware.Auth(handlers.HomepageHandler))
 	app.Get("/register", handlers.RenderRegisterPage)
 	app.Get("/login", handlers.RenderLoginPage)
 	app.Post("/login", handlers.Login)
 }
 
-func SetupApiRoutes(app *fiber.App, storage *fiber.Storage) {
+func ApiRoutes(app *fiber.App) {
 	// Here you setup the ROUTE GROUP for the Api
 	api := app.Group("/api/v1", func(c *fiber.Ctx) error {
 		c.Set("Version", "1")

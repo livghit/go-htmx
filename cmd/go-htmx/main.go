@@ -31,8 +31,8 @@ func run(env config.Env) error {
 	* 	inside the handlers to modify and store
 	* 	the data
 	 */
-	SetupApiRoutes(app.App, &s)
-	SetupWebRoutes(app.App, &s)
+	ApiRoutes(app.App)
+	WebRoutes(app.App)
 
 	return app.Listen(env.APP_PORT)
 }

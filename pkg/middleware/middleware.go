@@ -20,6 +20,5 @@ import (
 // Adding the csrf middleware to the application
 func CSRF() func(c *fiber.Ctx) error {
 	csrf := csrf.New(config.CsrfConfig())
-
 	return csrf
 }
