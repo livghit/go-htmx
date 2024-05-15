@@ -12,7 +12,7 @@
 
 <div align="center">
 <kbd>
-<img src="https://cdn.dribbble.com/users/722246/screenshots/3977397/media/553d7f83386c55d83cada5cb3f72dc3e.gif"  alt="Cool animation" height="300" width="100%"/>
+<img src="https://cdn.dribbble.com/users/722246/screenshots/3977397/media/553d7f83386c55d83cada5cb3f72dc3e.gif"  alt="Cool animation" height="300" width="800"/>
 </kbd>
 <p>Animated Image build by <a href="https://dribbble.com/yupnguyen">Yup Nguyen</a>
 <div>Using</div>
