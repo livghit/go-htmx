@@ -12,8 +12,9 @@
 
 <div align="center">
 <kbd>
-<img src="https://cdn.dribbble.com/users/722246/screenshots/3977397/media/553d7f83386c55d83cada5cb3f72dc3e.gif"  alt="Cool animation" height="400" width="450"/>
+<img src="https://cdn.dribbble.com/users/722246/screenshots/3977397/media/553d7f83386c55d83cada5cb3f72dc3e.gif"  alt="Cool animation" height="600" width="400"/>
 </kbd>
+<p>Animated Image build by <a href="https://dribbble.com/yupnguyen">Yup Nguyen</a>
 <div>Using</div>
 
 [![GO](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
