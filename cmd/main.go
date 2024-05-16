@@ -1,9 +1,17 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/go-chi/chi"
+)
 
 func main() {
-	s := http.NewServeMux()
+	router := chi.NewRouter()
 
-	s.HandleFunc()
+	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello something"))
+	})
+
+	http.ListenAndServe(":3000", router)
 }
