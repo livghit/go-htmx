@@ -2,6 +2,7 @@ node_modules/
 package-lock.json
 go.sum
 app.env
+.env
 .DS_Store
 client/node_modules
 client/package-lock
