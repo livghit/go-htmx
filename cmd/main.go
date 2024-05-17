@@ -9,12 +9,8 @@ import (
 
 func main() {
 	router := chi.NewRouter()
-
-	routes.Web(router)
-
-	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello something"))
-	})
+	router.Mount("", routes.WebRoutes())
+	router.Mount("/api", routes.ApiRoutes())
 
 	http.ListenAndServe(":3000", router)
 }

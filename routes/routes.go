@@ -1,24 +1,24 @@
 package routes
 
 import (
-	"net/http"
-
 	"github.com/go-chi/chi"
+	"github.com/livghit/go-htmx/services"
 )
 
 // defining the Web routes
-func Web(r *chi.Mux) {
+func WebRoutes() *chi.Mux {
+	webRoutes := chi.NewRouter()
 	// here the routes that you want to have as you're WEBROUTES
+
+	return webRoutes
 }
 
 // defining the Api routes
-func Api(r *chi.Mux) {
+func ApiRoutes() *chi.Mux {
 	// here the routes that you want to have as you're APIROUITES
 	// an small best practice is using grouping ex below
 	apiRouter := chi.NewRouter()
-	apiRouter.Get("/users", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Mount this using r."))
-	})
+	apiRouter.Get("/users", services.GetAllUsers)
 
-	r.Mount("api", apiRouter)
+	return apiRouter
 }
