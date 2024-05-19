@@ -1,8 +1,10 @@
 package config
 
 import (
-	"log/slog"
+	"os"
+	"strings"
 
+	"github.com/charmbracelet/log"
 	"github.com/joho/godotenv"
 )
 
@@ -16,7 +18,7 @@ type Env struct {
 
 func LoadEnv() {
 	if err := godotenv.Load(); err != nil {
-		slog.Error(".env file was not found. Are you sure you have one ?")
+		log.Error(".env file was not found. Are you sure you have one ?")
 	}
 }
 
@@ -25,7 +27,16 @@ func LoadEnv() {
 * the needed inputs for it ex pw , connection string and so on
  */
 func ConnectToDatabase() {
-	var connection string = "Hello"
-	switch connection {
+	engine := os.Getenv("DB_ENGINE")
+	switch strings.ToLower(engine) {
+	case "mysql":
+		log.Info("Connecting to database via " + engine)
+	case "postgress":
+		log.Info("Connecting to database via " + engine)
+	case "sqlite3":
+		log.Info("Connecting to database via " + engine)
+	case "":
+		log.Error("The DB_ENGINE inside the env File may not be set !")
+
 	}
 }
