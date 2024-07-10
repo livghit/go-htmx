@@ -7,18 +7,20 @@ import (
 
 // defining the Web routes
 func WebRoutes() *chi.Mux {
-	webRoutes := chi.NewRouter()
+	router := chi.NewRouter()
 	// here the routes that you want to have as you're WEBROUTES
 
-	return webRoutes
+	router.Get("GET /", services.HandleHomepage)
+
+	return router
 }
 
 // defining the Api routes
-func ApiRoutes() *chi.Mux {
+func V1Api() *chi.Mux {
 	// here the routes that you want to have as you're APIROUITES
 	// an small best practice is using grouping ex below
-	apiRouter := chi.NewRouter()
-	apiRouter.Get("/users", services.GetAllUsers)
+	router := chi.NewRouter()
+	router.Get("/users", services.GetAllUsers)
 
-	return apiRouter
+	return router
 }

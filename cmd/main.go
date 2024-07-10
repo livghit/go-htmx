@@ -18,7 +18,7 @@ func init() {
 func main() {
 	router := chi.NewRouter()
 	router.Mount("/", routes.WebRoutes())
-	router.Mount("/api", routes.ApiRoutes())
+	router.Mount("/api/v1", routes.V1Api())
 
 	log.Info("Welcome to " + os.Getenv("APP_NAME"))
 	http.ListenAndServe(":3000", router)
