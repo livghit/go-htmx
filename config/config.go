@@ -1,8 +1,10 @@
 package config
 
 import (
+	"net/http"
 	"os"
 	"strings"
+  "embed"
 
 	"github.com/charmbracelet/log"
 	"github.com/joho/godotenv"
@@ -39,4 +41,15 @@ func ConnectToDatabase() {
 		log.Error("The DB_ENGINE inside the env File may not be set !")
 
 	}
+}
+
+func StaticFiles(path string) {
+	fs := http.FileServer(http.Dir("./" + path))
+	http.Handle("/static/", http.StripPrefix("/"+path+"/", fs))
+}
+
+func EmbededFiles(path string) embed.FS{
+  // here the files that need to be embeded
+  var embeded embed.FS
+  return embeded
 }

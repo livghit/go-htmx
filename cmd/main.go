@@ -13,10 +13,11 @@ import (
 func init() {
 	config.LoadEnv()
 	config.ConnectToDatabase()
+  config.StaticFiles("static")
 }
 
 func main() {
-	router := chi.NewRouter()
+  	router := chi.NewRouter()
 	router.Mount("/", routes.WebRoutes())
 	router.Mount("/api/v1", routes.V1Api())
 
