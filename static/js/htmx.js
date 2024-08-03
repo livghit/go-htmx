@@ -1,0 +1,1 @@
+//here define the htmx config and export it into bootstrap.js
