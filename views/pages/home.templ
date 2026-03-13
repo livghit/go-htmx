@@ -1,0 +1,45 @@
+package pages
+
+import (
+	"github.com/livghit/go-htmx/flash"
+	"github.com/livghit/go-htmx/views/layouts"
+)
+
+templ HomePage(flashes []flash.Flash, username string) {
+	@layouts.Base("Home", flashes) {
+		<div class="max-w-2xl mx-auto text-center py-16">
+			<h1 class="text-4xl font-bold text-gray-900 mb-4">Welcome to go-htmx</h1>
+			<p class="text-lg text-gray-600 mb-8">
+				A production-ready Go + HTMX framework. Fast, simple, and hypermedia-driven.
+			</p>
+			if username != "" {
+				<p class="text-indigo-600 font-medium mb-6">Hello, { username }!</p>
+				<form action="/logout" method="POST" class="inline">
+					<button
+						type="submit"
+						class="px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md hover:bg-gray-800"
+						hx-post="/logout"
+						hx-swap="none"
+					>
+						Log out
+					</button>
+				</form>
+			} else {
+				<div class="flex gap-4 justify-center">
+					<a
+						href="/login"
+						class="px-5 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+					>
+						Sign in
+					</a>
+					<a
+						href="/register"
+						class="px-5 py-2.5 text-sm font-medium text-indigo-600 bg-white border border-indigo-300 rounded-md hover:bg-indigo-50"
+					>
+						Create account
+					</a>
+				</div>
+			}
+		</div>
+	}
+}

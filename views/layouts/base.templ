@@ -1,0 +1,27 @@
+package layouts
+
+import "github.com/livghit/go-htmx/flash"
+
+templ Base(title string, flashes []flash.Flash) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<script src="/static/js/htmx.min.js" defer></script>
+			<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+			<meta name="htmx-config" content='{"defaultSwapStyle":"innerHTML","scrollIntoViewOnBoost":true}'/>
+		</head>
+		<body class="bg-gray-50 text-gray-900 min-h-screen" hx-boost="true">
+			@Nav()
+			<div id="flash-container" class="fixed top-4 right-4 z-50 space-y-2 w-80">
+				@FlashList(flashes)
+			</div>
+			<main id="main-content" class="container mx-auto px-4 py-8">
+				{ children... }
+			</main>
+		</body>
+	</html>
+}
