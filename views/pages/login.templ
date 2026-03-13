@@ -1,0 +1,71 @@
+package pages
+
+import (
+	"github.com/livghit/go-htmx/flash"
+	"github.com/livghit/go-htmx/validation"
+	"github.com/livghit/go-htmx/views/layouts"
+)
+
+templ LoginPage(flashes []flash.Flash, errs validation.Errors) {
+	@layouts.Base("Sign in", flashes) {
+		<div class="max-w-md mx-auto mt-8">
+			<div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+				<h1 class="text-2xl font-bold text-gray-900 mb-6">Sign in</h1>
+				<form
+					method="POST"
+					action="/login"
+					class="space-y-4"
+					hx-post="/login"
+					hx-swap="outerHTML"
+					hx-target="closest form"
+				>
+					<div>
+						<label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+						<input
+							id="username"
+							name="username"
+							type="text"
+							autocomplete="username"
+							class={ "w-full rounded-md border px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500", inputClass(errs.Has("username")) }
+							placeholder="your username"
+						/>
+						if errs.Has("username") {
+							<p class="mt-1 text-xs text-red-600">{ errs.First("username") }</p>
+						}
+					</div>
+					<div>
+						<label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+						<input
+							id="password"
+							name="password"
+							type="password"
+							autocomplete="current-password"
+							class={ "w-full rounded-md border px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500", inputClass(errs.Has("password")) }
+							placeholder="••••••••"
+						/>
+						if errs.Has("password") {
+							<p class="mt-1 text-xs text-red-600">{ errs.First("password") }</p>
+						}
+					</div>
+					<button
+						type="submit"
+						class="w-full py-2.5 px-4 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+					>
+						Sign in
+					</button>
+					<p class="text-center text-sm text-gray-500">
+						No account yet?
+						<a href="/register" class="text-indigo-600 hover:underline">Create one</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	}
+}
+
+func inputClass(hasError bool) string {
+	if hasError {
+		return "border-red-400 bg-red-50"
+	}
+	return "border-gray-300 bg-white"
+}
